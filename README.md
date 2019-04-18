@@ -9,7 +9,7 @@ You can run your test scenarios right now after setting some environmental varia
 This variable is required the target hostname (FQDN) with HTTP scheme such as 'https://www.example.com.'
 
 ### URI?: (option)
-These variables are the target site's path starts with '/' The default value is '/.'
+These variables are the target site's path from starts with '/.' The default value is '/.'
 Your need multiple test scenarios to set various environmental variables and the `?` is the serial number of your test scenario begins with '1.'
 
 ### MIN_WAIT:
