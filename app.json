@@ -19,12 +19,12 @@
     "MIN_WAIT": {
       "description": "This is the minimum time respectively, in milliseconds, that a simulated user will wait between MIN_WAIT and MAX_WAIT executing each task",
       "required": false,
-      "value": 5000
+      "value": "5000"
     },
     "MAX_WAIT": {
       "description": "This is the maximum time respectively, in milliseconds, that a simulated user will wait between MIN_WAIT and MAX_WAIT executing each task.",
       "required": false,
-      "value": 15000
+      "value": "15000"
     }
   },
   "formation": {
