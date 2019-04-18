@@ -5,16 +5,16 @@ You can run your test scenarios right now after setting some environmental varia
 
 # Envirionmental variables
 
-HOSTNAME:
+## HOSTNAME:
 This variable is required the target hostname (FQDN) with HTTP scheme such as 'https://www.example.com.'
 
-URI?:
+## URI?:
 These variables are the target site's path starts with '/' and the "?" is the serial number of your test scenario begins with '1.' The default value is '/.'
 
-MIN_WAIT:
+## MIN_WAIT:
 This variable is the minimum time respectively, in milliseconds, that a simulated user will wait between MIN_WAIT and MAX_WAIT executing each task.
 
-MAX_WAIT:
+## MAX_WAIT:
 This variable is the maximum time respectively, in milliseconds, that a simulated user will wait between MIN_WAIT and MAX_WAIT executing each task.
 
 # Heroku Button
