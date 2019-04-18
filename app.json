@@ -13,18 +13,18 @@
     },
     "URI1": {
       "description": "This is the target site's path starts with '/'",
-      "value": "/",
-      "required": false
+      "required": false,
+      "value": "/"
     },
     "MIN_WAIT": {
       "description": "This is the minimum time respectively, in milliseconds, that a simulated user will wait between MIN_WAIT and MAX_WAIT executing each task",
-      "value": 5000,
-      "required": false
+      "required": false,
+      "value": 5000
     },
     "MAX_WAIT": {
       "description": "This is the maximum time respectively, in milliseconds, that a simulated user will wait between MIN_WAIT and MAX_WAIT executing each task.",
-      "value": 15000,
-      "required": false
+      "required": false,
+      "value": 15000
     }
   },
   "formation": {
