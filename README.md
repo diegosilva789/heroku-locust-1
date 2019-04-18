@@ -8,15 +8,15 @@ You can run your test scenarios right now after setting some environmental varia
 ### HOSTNAME:
 This variable is required the target hostname (FQDN) with HTTP scheme such as 'https://www.example.com.'
 
-### URI?: (option)
+### URI?: (optional)
 These variables are the target site's path from starts with '/.' The default value is '/.'
 Your need multiple test scenarios to set various environmental variables and the `?` is the serial number of your test scenario begins with '1.'
 
-### MIN_WAIT:
-This variable is the minimum time respectively, in milliseconds, that a simulated user will wait between MIN_WAIT and MAX_WAIT executing each task.
+### MIN_WAIT: (optional)
+This variable is the minimum time respectively, in milliseconds, that a simulated user will wait between MIN_WAIT and MAX_WAIT executing each task. The default value is 5000(ms).
 
-### MAX_WAIT:
-This variable is the maximum time respectively, in milliseconds, that a simulated user will wait between MIN_WAIT and MAX_WAIT executing each task.
+### MAX_WAIT: (optional)
+This variable is the maximum time respectively, in milliseconds, that a simulated user will wait between MIN_WAIT and MAX_WAIT executing each task. The default value is 15000(ms).
 
 ## Heroku Button
 
