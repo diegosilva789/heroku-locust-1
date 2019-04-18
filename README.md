@@ -20,6 +20,6 @@ This variable is the maximum time respectively, in milliseconds, that a simulate
 
 ## Heroku Button
 
-Note: Install only into Heroku Private Space.
+Notice: Install only into Heroku Private Space.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
