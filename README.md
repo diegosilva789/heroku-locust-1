@@ -5,8 +5,8 @@ You can run your test scenarios right now after setting some environmental varia
 
 ## Envirionmental variables
 
-### HOSTNAME:
-This variable is required the target hostname (FQDN) with HTTP scheme such as 'https://www.example.com.'
+### HOSTNAME: (required)
+This variable is the target hostname (FQDN) with HTTP scheme such as 'https://www.example.com.'
 
 ### URI?: (optional)
 These variables are the target site's path from starts with '/.' The default value is '/.'
