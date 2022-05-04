@@ -1,2 +1,1 @@
-web: locust -P $PORT --master
-
+web: locust -P $PORT -f locustfile.py
