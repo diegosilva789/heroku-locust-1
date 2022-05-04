@@ -1,33 +1,52 @@
-from locust import HttpLocust, TaskSet
-import os
+import math
+from locust import HttpUser, TaskSet, task, constant
+from locust import LoadTestShape
 
 
-def factory(uri):
-    def _locust(locust):
-        locust.client.get(uri)
-    return _locust
+class UserTasks(TaskSet):
+    
+    @task
+    def registrar(self):
+        self.client.post("/registrar", json={
+            "name": "Roberto Campos",
+            "email": "robertocampos@email.com",
+            "password": "1234",
+            "cellphoneNumber": "12999998888"
+        })
+        
+    @task
+    def usuarios(self):
+        self.client.get("/usuarios")
 
 
-num, mytasks = 1, {}
-while os.getenv('URI'+str(num)):
-    mytasks[factory(os.getenv('URI'+str(num)))] = 1
-    num += 1
+class WebsiteUser(HttpUser):
+    wait_time = constant(0.5)
+    tasks = [UserTasks]
 
 
-def index(l):
-    l.client.get('/')
+class DoubleWave(LoadTestShape):
+    
+    """
+    A step load shape
+    Keyword arguments:
+        step_time -- Time between steps
+        step_load -- User increase amount at each step
+        spawn_rate -- Users to stop/start per second at every step
+        time_limit -- Time limit in seconds
+    """
 
+    step_time = 30
+    step_load = 10
+    spawn_rate = 10
+    time_limit = 600
 
-if mytasks == {}:
-    mytasks = {index: 1}
+    def tick(self):
+        run_time = self.get_run_time()
 
+        if run_time > self.time_limit:
+            return None
 
-class TestCase(TaskSet):
-    tasks = mytasks
+        current_step = math.floor(run_time / self.step_time) + 1
+        return (current_step * self.step_load, self.spawn_rate)
 
-
-class WebsiteUser(HttpLocust):
-    task_set = TestCase
-    host = os.getenv('HOSTNAME')
-    min_wait = int(os.getenv('MIN_WAIT')) if os.getenv('MIN_WAIT') else 5000
-    max_wait = int(os.getenv('MAX_WAIT')) if os.getenv('MAX_WAIT') else 15000
+# locust -f locust2.py --host=https://pycemaker.herokuapp.com --headless
